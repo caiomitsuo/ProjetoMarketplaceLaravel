@@ -36,4 +36,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function stores ()
+    {
+        return $this->hasOne(Store::class);
+    }
 }
+
+
+
+
+
+
+
+//1:1 - Um para um (Usuario e loja)
+//1:N - Um para Muitos (Loja e Produtos)
+//N:N - Muitos pra Muitos (produtos e Categorias)

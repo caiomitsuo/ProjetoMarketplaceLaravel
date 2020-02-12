@@ -1,4 +1,5 @@
 <?php
+//seeds permitem que criamos dados para nossas tabelas para poder fazer teste
 
 use Illuminate\Database\Seeder;
 
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call(UserTableSeeder::class);
     }
 }
