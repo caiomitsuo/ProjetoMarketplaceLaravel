@@ -20,6 +20,12 @@ class UserTableSeeder extends Seeder
     //             'remember_token' => 'okawokdoko',
     //         ]
     //    );
-       factory(\App\User::class, 40)->create();
+    
+    //Criando 40 usuarios mais para cada usuario estou fazendo uma loja
+    //Usando o metodo save e não o create.
+    //Make retorna uma instancia do objeto
+       factory(\App\User::class, 40)->create()->each(function($user){
+           $user->store()->save(factory(\App\Store::class)->make());
+       });
     }
 }

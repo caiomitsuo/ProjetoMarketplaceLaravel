@@ -42,6 +42,12 @@ Route::get('/model',function(){
     // $user= $user->update([
     //     'name' => 'Atualizando com Mass Update'
     // ]); //true or false
+
+        $user = \App\User::find(4);
+
+        return $user->store;
+
+
         return \App\User::all();
 });
 
